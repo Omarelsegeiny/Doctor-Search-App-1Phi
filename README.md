@@ -1,4 +1,4 @@
-# Doctor Search App
+# Doctor Search App - 1Phi FSD Challenge
 
 A full-stack web application that helps patients find relevant healthcare providers using natural language search.
 
