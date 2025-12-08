@@ -31,3 +31,15 @@ app.get("/test-db", async (req, res) => {
     res.status(500).json({ success: false, error: err.message });
   }
 });
+
+const searchRouter = require("./routes/search");
+app.use("/api/search", searchRouter);
+
+app.get("/debug/providers-schema", async (req, res) => {
+  try {
+    const [rows] = await pool.query("DESCRIBE providers;");
+    res.json(rows);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
