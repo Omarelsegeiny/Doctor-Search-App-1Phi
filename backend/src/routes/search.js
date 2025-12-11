@@ -119,20 +119,6 @@ router.post("/", async (req, res) => {
 
     let [rows] = await pool.query(sql, params);
 
-    // If procedures are mentioned, we could filter by procedures table
-    // For now, we'll return providers that match specialty and location
-    // In a production system, you'd join with a procedures/services table
-
-    // Additional filtering for location keywords like "downtown"
-    if (parsed.location.keyword && parsed.location.city) {
-      // For "downtown" or similar, we could filter by zip codes or specific areas
-      // This is a simplified version - in production, you'd have a location mapping
-      rows = rows.filter((row) => {
-        // Keep all results for now, but prioritize those in the city
-        return true;
-      });
-    }
-
     // Limit final results
     const results = rows.slice(0, limit);
 
