@@ -2,9 +2,9 @@ import { Typography, CardContent } from "@mui/material";
 import { StyledCard } from "./styled";
 import { handleDoctorClick } from "../utils/doctorUtils";
 
-const DoctorCard = ({ doctor }) => {
+const DoctorCard = ({ doctor, minWidth }) => {
   return (
-    <StyledCard onClick={() => handleDoctorClick(doctor)}>
+    <StyledCard onClick={() => handleDoctorClick(doctor)} minWidth={minWidth}>
       <CardContent>
         <Typography variant="h6" sx={{ fontWeight: "bold" }}>
           {doctor.first_name} {doctor.last_name}

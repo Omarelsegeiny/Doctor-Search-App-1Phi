@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Grid, Snackbar, Alert } from "@mui/material";
 import {
   GradientContainer,
@@ -6,6 +6,7 @@ import {
   ResultsGrid,
 } from "./components/styled";
 import { handleSearch } from "./utils/searchUtils";
+import { calculateMaxCardWidth } from "./utils/doctorUtils";
 import PageHeader from "./components/PageHeader";
 import ErrorMessage from "./components/ErrorMessage";
 import FallbackMessage from "./components/FallbackMessage";
@@ -20,6 +21,9 @@ function App() {
   const [message, setMessage] = useState(null);
   const [isFallback, setIsFallback] = useState(false);
   const [error, setError] = useState(null);
+
+  // Calculate the longest text content across all doctor cards
+  const maxCardWidth = useMemo(() => calculateMaxCardWidth(results), [results]);
 
   const onSearch = () => {
     handleSearch(query, {
@@ -63,7 +67,7 @@ function App() {
           <ResultsGrid container spacing={3}>
             {results.map((r) => (
               <Grid item xs={12} sm={6} md={4} key={r.npi}>
-                <DoctorCard doctor={r} />
+                <DoctorCard doctor={r} minWidth={maxCardWidth} />
               </Grid>
             ))}
           </ResultsGrid>

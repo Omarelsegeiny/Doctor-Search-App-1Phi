@@ -2,7 +2,7 @@ import { TextField } from "@mui/material";
 import { styled } from "@mui/system";
 
 const SearchTextField = styled(TextField)({
-  minWidth: { xs: "100%", sm: "550px", md: "650px", lg: "800px" },
+  width: "100%",
   "& .MuiOutlinedInput-root": {
     borderRadius: 24,
     background: "#fff",

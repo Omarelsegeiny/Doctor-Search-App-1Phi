@@ -1,12 +1,8 @@
 import { LoadingContainer, StyledCircularProgress } from "./styled";
 
 const LoadingIndicator = ({ loading }) => {
-  if (!loading) return null;
-
   return (
-    <LoadingContainer>
-      <StyledCircularProgress />
-    </LoadingContainer>
+    <LoadingContainer>{loading && <StyledCircularProgress />}</LoadingContainer>
   );
 };
 

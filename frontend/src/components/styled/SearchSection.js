@@ -11,6 +11,7 @@ const SearchSection = styled("div")(({ hasResults }) => ({
   transition: "all 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
   transform: hasResults ? "translateY(-20px)" : "translateY(0)",
   opacity: 1,
+  width: "100%",
 }));
 
 export default SearchSection;

@@ -6,6 +6,7 @@ const LoadingContainer = styled("div")({
   alignItems: "center",
   justifyContent: "center",
   marginTop: "1rem",
+  minHeight: "60px",
   transition: "opacity 0.3s ease",
 });
 

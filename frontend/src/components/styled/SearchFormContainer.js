@@ -1,10 +1,13 @@
-import { Grid } from "@mui/material";
+import { Box } from "@mui/material";
 import { styled } from "@mui/system";
 
-const SearchFormContainer = styled(Grid)({
+const SearchFormContainer = styled(Box)({
   width: "100%",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  gap: "1rem",
   marginBottom: "1rem",
-  maxWidth: { xs: "90%", sm: "800px", md: "900px" },
 });
 
 export default SearchFormContainer;
