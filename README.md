@@ -73,7 +73,7 @@ Create a `.env` file in the `backend` directory:
 ```env
 # Database Configuration
 DB_HOST=your_database_host
-DB_PORT=3306
+DB_PORT=database_port
 DB_USER=your_database_user
 DB_PASSWORD=your_database_password
 DB_NAME=your_database_name
@@ -454,14 +454,6 @@ The backend is deployed on Render as a web service.
 2. Make changes and test
 3. Commit with descriptive messages
 4. Push and create pull request
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
 
 ## 📄 License
 
